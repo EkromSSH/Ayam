@@ -10,5 +10,12 @@ def check_port(ip, port):
         else:
             print(f"Port {port} on {ip} is closed")
 
+def test_all_ports_and_ips(ips, ports):
+    for ip in ips:
+        for port in ports:
+            check_port(ip, port)
+
 if __name__ == "__main__":
-    check_port("8.8.8.8", 80)  # ทดสอบพอร์ต 80 บน IP 8.8.8.8
+    ips = ["8.8.8.8", "8.8.4.4"]  # เพิ่ม IP ที่ต้องการทดสอบ
+    ports = [22, 80, 443]  # เพิ่มพอร์ตที่ต้องการทดสอบ
+    test_all_ports_and_ips(ips, ports)
